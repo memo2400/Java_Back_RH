@@ -1,0 +1,4 @@
+
+org.hibernate.exception.JDBCConnectionException: unable to obtain isolated JDBC connection [Communications link failure
+
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
