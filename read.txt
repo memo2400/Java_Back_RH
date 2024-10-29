@@ -2,3 +2,12 @@
 org.hibernate.exception.JDBCConnectionException: unable to obtain isolated JDBC connection [Communications link failure
 
 Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+
+
+my sql , instalador
+https://dev.mysql.com/downloads/installer/
+
+
+descargar de wokbench sql
+https://dev.mysql.com/downloads/file/?id=528765
