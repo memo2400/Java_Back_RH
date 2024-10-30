@@ -11,3 +11,6 @@ public class RhApplication {
 	}
 
 }
+
+// C:\Users\Laptop\SWF\Java\Java_Back_RH\src\main\java\gm\rh\RhApplication.java
+// C:\Users\Laptop\SWF\Java\Java_Back_RH\src\main\java\gm\rh\modelo\Empleado.java
