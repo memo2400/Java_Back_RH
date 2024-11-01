@@ -20,5 +20,43 @@ se tuvo que instalar de acuerdo al tutorila la misma vesion de
 wokbech y mySQL, y asi ya funciono la generacion de la tabla con java.
 8.0.32
 
+ -------
+    Hibernate: create table empleado (id_empleado integer not null auto_increment, departamento varchar(255), nombre varchar(255), sueldo float(53), primary key (id_empleado)) engine=InnoDB
+    Hibernate: create table empleado_2 (id_empleado integer not null auto_increment, departamento varchar(255), nombre varchar(255), sueldo float(53), primary key (id_empleado)) 
+    engine=InnoDB
+ -----
+
 LA consulta en el wokrbech debia ser con user rrot para que fucnionara.
 ña consulta y ya pude ver las dos tablas.
+
+Lec 177
+
+se da clic derechoa a la tabla y en alter table
+
+    ponemos el nombre en segundo lugar.
+    y en aplicar
+
+ahora clic derecho y select rows.
+    con eso vemos los head de la tabla
+    podemos llenar los datos sin tocar el ID,
+    en apply  y losto
+
+-------------------------------
+
+lec 178
+
+se genera un pakage de repositrio
+
+se crea una interface EmpleadoRepositrio
+
+se hae el pakete servicios
+
+se genera otr inteface, esto porque spring siempre te las pide.
+
+voy a empleadoServicio le doy clic a
+    add unimplemente metodos
+
+    se agrega codigo en automaticos
+todo eso de emplado servicio se implementa con Hivbernate
+
+----------------
