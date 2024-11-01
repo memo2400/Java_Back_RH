@@ -11,3 +11,14 @@ https://dev.mysql.com/downloads/installer/
 
 descargar de wokbench sql
 https://dev.mysql.com/downloads/file/?id=528765
+
+
+de aqui descargue segun el video
+https://dev.mysql.com/downloads/installer/
+
+se tuvo que instalar de acuerdo al tutorila la misma vesion de 
+wokbech y mySQL, y asi ya funciono la generacion de la tabla con java.
+8.0.32
+
+LA consulta en el wokrbech debia ser con user rrot para que fucnionara.
+ña consulta y ya pude ver las dos tablas.
