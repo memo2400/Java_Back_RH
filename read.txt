@@ -60,3 +60,21 @@ voy a empleadoServicio le doy clic a
 todo eso de emplado servicio se implementa con Hivbernate
 
 ----------------
+
+Leccion 179.
+
+crwamos app rest
+
+creamos paquete controlador.
+
+Fin 
+
+--------------------
+
+Leccion 180
+
+se agrega funcion para consultad todos loa empleados
+
+se prueba la app en el navegador.
+
+/8080/rh-app/empleados
