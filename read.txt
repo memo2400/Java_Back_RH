@@ -78,3 +78,11 @@ se agrega funcion para consultad todos loa empleados
 se prueba la app en el navegador.
 
 /8080/rh-app/empleados
+
+--------------
+
+leccion  181.
+
+Seusara postman
+url tipo get
+http://localhost:8080/rh-app/empleados

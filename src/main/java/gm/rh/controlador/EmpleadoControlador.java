@@ -26,10 +26,11 @@ public class EmpleadoControlador {
     private IEmpleadoServicio empleadoServicio;
 
     //se agrega funcion para consultad todos loa empleados
-    @GetMapping("/empleados_maasivo")
+    @GetMapping("/empleados")
     public List<Empleado> obtenerEmpleados() {
         var empleados = empleadoServicio.listarEmpleados();
         // mandamos a imprimir el show
+        // enla consola se ve asi, Hibernate: select e1_0.id_empleado,e1_0.departamento,e1_0.nombre,e1_0.sueldo from empleado e1_0
         empleados.forEach((empleado -> logger.info(empleado.toString())));        // expresion lambda para procesar cada entrada
 
         return empleados;
