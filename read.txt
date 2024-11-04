@@ -86,3 +86,25 @@ leccion  181.
 Seusara postman
 url tipo get
 http://localhost:8080/rh-app/empleados
+
+-----------------
+Leccion 188.
+
+se debe enviar en postamn con el link 
+y en tipo body - raw - JSON
+
+inserto esto sin ID.
+
+    {
+        "nombre": "Jeff Bezos",
+        "departamento": "Amazon",
+        "sueldo": 9900.0
+    }
+
+esto me respondio la app y aparecio un 200 de estaus OK
+{
+    "idEmpleado": 6,
+    "nombre": "Jeff Bezos",
+    "departamento": "Amazon",
+    "sueldo": 9900.0
+}
