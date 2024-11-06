@@ -5,13 +5,16 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import gm.rh.excepcion.RecursoNoEncontradoExcepcion;
 import gm.rh.modelo.Empleado;
 import gm.rh.servicios.EmpleadoServicio;
 import gm.rh.servicios.IEmpleadoServicio;
@@ -48,6 +51,21 @@ public class EmpleadoControlador {
         //  usamos el servicio para guardar o insertar el empleado
         return empleadoServicio.guardarEmpleado(empleado);
 
+    }
+
+    // burcar empleado por ID lec 192, va a ir envuelta la respues en Entity
+    // el pathvariable significa que viene del nuestra ruta la variable
+    @GetMapping("/empleados/{id}")
+    public ResponseEntity<Empleado> obtenerEmpleadoPorID (@PathVariable Integer id){
+
+        Empleado empleado = empleadoServicio.buscarEmpleadoPorId(id);
+        if (empleado == null){
+            //
+            throw new RecursoNoEncontradoExcepcion("No se encontró el ID empledado: " + id);
+        
+        }
+        // se responde el empleado, dentro del respnse entity.
+        return ResponseEntity.ok(empleado);
     }
 
 }

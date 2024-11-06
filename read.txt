@@ -108,3 +108,41 @@ esto me respondio la app y aparecio un 200 de estaus OK
     "departamento": "Amazon",
     "sueldo": 9900.0
 }
+
+
+-------------
+
+lec 192
+
+se agregara el buscar empleado por ID. en el controlador rest
+
+se cra el paquete exception
+
+probamos el nuevo codigo con postman
+/## numero
+
+http://localhost:8080/rh-app/empleados/6
+
+
+jala al  100
+
+respuesta 
+
+{
+    "idEmpleado": 6,
+    "nombre": "Jeff Bezos",
+    "departamento": "Amazon",
+    "sueldo": 9900.0
+}
+
+ya quedo full
+
+si meto unid que no existe pasa esto
+
+responde  con un 404 not found
+{
+    "timestamp": "2024-11-06T16:03:52.621+00:00",
+    "status": 404,
+    "error": "Not Found",
+    "path": "/rh-app/empleados/8"
+}
