@@ -176,3 +176,9 @@ Depues de enviar nos responde con el 200-OK
     "departamento": "Meta",
     "sueldo": 20000.0
     }
+
+----------------
+
+lec 197
+
+agregaremos en controlador, el borrado

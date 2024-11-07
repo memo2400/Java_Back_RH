@@ -1,12 +1,15 @@
 package gm.rh.controlador;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -90,6 +93,27 @@ public class EmpleadoControlador {
 
         //  aqui el objeto empleado ya esta actualizado, nosotros ahora nos redirigimos al listado
         return ResponseEntity.ok(empleado);
+
+    }
+
+    // borrar empleado
+    @DeleteMapping("/empleados/{id}")
+    //  la respuesta sera texto y valor, recibirmos el id a eliminar
+    public ResponseEntity <Map<String, Boolean>> eliminarEmpleado (@PathVariable Integer id)
+    {
+        // recuperarmos el objeto empleado de BD antes de eleiminarlo. veremo primero si existe.
+        Empleado empleado = empleadoServicio.buscarEmpleadoPorId(id);
+
+        if (empleado == null)
+            throw new RecursoNoEncontradoExcepcion("El ID recibido no existe: " + id);
+        
+        empleadoServicio.eliminarEmpleado(empleado);
+        
+        // Json {"emilinado", "true"}
+        respuesta.put("eliminado", Boolean.TRUE);
+        
+        Map<String, Boolean> respuesta = new HashMap<>();
+        return ResponseEntity.ok(respuesta);
 
     }
 
