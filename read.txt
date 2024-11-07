@@ -146,3 +146,33 @@ responde  con un 404 not found
     "error": "Not Found",
     "path": "/rh-app/empleados/8"
 }
+
+-----------------------------------
+
+post era para agregara
+ahora se usara el PUT.
+
+usamos postman para porbar nuestro metodo PUT.
+
+usaremos un ID ya existente 
+
+metdod PUT
+http://localhost:8080/rh-app/empleados/5
+
+en el Budy, enviamos el RAW e siguiente JSON. aqui el ID esta de mas pero igual lo dejamos
+
+    {
+        "idEmpleado": 5,
+        "nombre": "Mark Zukaritas",
+        "departamento": "Meta",
+        "sueldo": 20000.0
+    }
+
+Depues de enviar nos responde con el 200-OK
+
+    {
+    "idEmpleado": 5,
+    "nombre": "Mark Zukaritas",
+    "departamento": "Meta",
+    "sueldo": 20000.0
+    }

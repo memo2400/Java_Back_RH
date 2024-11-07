@@ -18,6 +18,8 @@ import gm.rh.excepcion.RecursoNoEncontradoExcepcion;
 import gm.rh.modelo.Empleado;
 import gm.rh.servicios.EmpleadoServicio;
 import gm.rh.servicios.IEmpleadoServicio;
+import org.springframework.web.bind.annotation.PutMapping;
+
 
 @RestController             // co este recibimos y hacemos peticones http
 @RequestMapping("rh-app")             // como es a nivel clase se usa parentesis, seran localhost/rh-app
@@ -66,6 +68,28 @@ public class EmpleadoControlador {
         }
         // se responde el empleado, dentro del respnse entity.
         return ResponseEntity.ok(empleado);
+    }
+    //  este es el PUT
+    @PutMapping("/empleados/{id}")
+    public ResponseEntity<Empleado> actualizarEmpleado(@PathVariable Integer id, 
+    @RequestBody Empleado empleadoRecibido){
+
+        // buscaremos nuestro objeto empleado y para asegurarnos que exite, primero lo buscamos por id.
+        Empleado empleado = empleadoServicio.buscarEmpleadoPorId(id);
+
+        // esta es una validacino antes de guardado, para no hacer el guardado directo.
+        if (empleado == null)
+            throw new RecursoNoEncontradoExcepcion("El ID recibido no existe: " + id);
+        
+        empleado.setNombre(empleadoRecibido.getNombre());
+        empleado.setDepartamento(empleadoRecibido.getDepartamento());
+        empleado.setSueldo(empleadoRecibido.getSueldo());
+
+        empleadoServicio.guardarEmpleado(empleado);
+
+        //  aqui el objeto empleado ya esta actualizado, nosotros ahora nos redirigimos al listado
+        return ResponseEntity.ok(empleado);
+
     }
 
 }
