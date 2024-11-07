@@ -57,6 +57,7 @@ public class EmpleadoControlador {
 
     // burcar empleado por ID lec 192, va a ir envuelta la respues en Entity
     // el pathvariable significa que viene del nuestra ruta la variable
+    // Se usa para el boton Editar
     @GetMapping("/empleados/{id}")
     public ResponseEntity<Empleado> obtenerEmpleadoPorID (@PathVariable Integer id){
 
@@ -69,7 +70,7 @@ public class EmpleadoControlador {
         // se responde el empleado, dentro del respnse entity.
         return ResponseEntity.ok(empleado);
     }
-    //  este es el PUT
+    //  este es el PUT , al parecer aun no se usa el put mas adelante
     @PutMapping("/empleados/{id}")
     public ResponseEntity<Empleado> actualizarEmpleado(@PathVariable Integer id, 
     @RequestBody Empleado empleadoRecibido){
