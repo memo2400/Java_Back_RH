@@ -182,3 +182,21 @@ Depues de enviar nos responde con el 200-OK
 lec 197
 
 agregaremos en controlador, el borrado
+
+
+uso la peticion, DELETE, y la direccion
+http://localhost:8080/rh-app/empleados/7
+
+con el numero final decido cual eliminar
+
+respuesta un OK 200, de que si se eleimino
+{
+    "eliminado": true
+}
+
+si el borrado falla responde, {
+    "timestamp": "2024-11-08T04:33:50.073+00:00",
+    "status": 404,
+    "error": "Not Found",
+    "path": "/rh-app/empleados/7"
+}

@@ -110,9 +110,9 @@ public class EmpleadoControlador {
         empleadoServicio.eliminarEmpleado(empleado);
         
         // Json {"emilinado", "true"}
-        respuesta.put("eliminado", Boolean.TRUE);
-        
         Map<String, Boolean> respuesta = new HashMap<>();
+        respuesta.put("eliminado", Boolean.TRUE);        
+        
         return ResponseEntity.ok(respuesta);
 
     }
