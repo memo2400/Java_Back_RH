@@ -200,3 +200,9 @@ si el borrado falla responde, {
     "error": "Not Found",
     "path": "/rh-app/empleados/7"
 }
+
+asi se ve el borrado en la consola.
+Hibernate: select e1_0.id_empleado,e1_0.departamento,e1_0.nombre,e1_0.sueldo from empleado e1_0 where e1_0.id_empleado=?
+Hibernate: delete from empleado where id_empleado=?
+Hibernate: select e1_0.id_empleado,e1_0.departamento,e1_0.nombre,e1_0.sueldo from empleado e1_0
+[http-nio-8080-exec-5] INFO : gm.rh.controlador.EmpleadoControlador - Empleado(idEmpleado=1, nombre=Kai Hansen, departamento=Gamma Ray, sueldo=15000.0)
